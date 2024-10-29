@@ -34,8 +34,15 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white">Account</a>
                     <ul class="dropdown-menu dropdown-menu-end" style="background-color: #333;">
-                      <li><a class="dropdown-item" style="color: white;" href="login_page.php">Log In</a></li>
-                      <li><a class="dropdown-item" style="color: white;" href="register_page.php">Register</a></li>
+                    <?php
+                      session_start(); 
+                      if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                        echo '<li><a class="dropdown-item" style="color: white;" href="../BackEnd/logout.php">Log Out</a></li>';
+                      }else{
+                        echo '<li><a class="dropdown-item" style="color: white;" href="login_page.php">Log In</a></li>';
+                        echo '<li><a class="dropdown-item" style="color: white;" href="register_page.php">Register</a></li>';
+                      }
+                      ?>
                     </ul>
                 </li>
             </ul>

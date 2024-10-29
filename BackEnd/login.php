@@ -1,6 +1,6 @@
 <?php
-require_once "./classes/User.php";
-require_once "./classes/DBC.php";
+require_once "../Core/User.php";
+require_once "../Core/DBC.php";
 session_start();
 if (empty($_SESSION["atempts"]))
 {
@@ -26,14 +26,14 @@ function verifyUser(string $username, string $password): void
         $_SESSION['username'] = $username;
         $_SESSION["loggedin"] = true;
         $_SESSION["atempts"] = 0;
-        header('Location: katalog_page.php');
+        header('Location: ../FrontEnd/index.php');
     } else {
         $_SESSION["atempts"] = $_SESSION["atempts"] +1;
         if($_SESSION["atempts"] >= 3)
         {
-	        error_log( '' . date('Y-m-d H:i:s') . ' - Login attempt on user: ' . $_POST["username"] . PHP_EOL, 3, "./log.txt");
+	        error_log( '' . date('Y-m-d H:i:s') . ' - Login attempt on user: ' . $_POST["username"] . PHP_EOL, 3, "../log.txt");
         }
-        header("Location: login_page.php");
+        header("Location: ../FrontEnd/login_page.php");
     }
 }
 ?>

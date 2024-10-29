@@ -1,6 +1,6 @@
 <?php
-require_once "./classes/User.php";
-require_once "./classes/DBC.php";
+require_once "../Core/User.php";
+require_once "../Core/DBC.php";
 session_start();
 if(empty($_POST["username"]) || empty($_POST["password"])){
     header('Location: index.php');
@@ -13,5 +13,5 @@ $query = DBC::getConnection()->query("call adduser ('" . $_POST["username"] . "'
 $username = $_POST["username"];
 $_SESSION['username'] = $username;
 $_SESSION["loggedin"] = true;
-header('Location: data.php');
+header('Location: ../FrontEnd/index.php');
 ?>

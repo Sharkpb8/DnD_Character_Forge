@@ -17,7 +17,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-underline ">
             <li class="nav-item">
-              <a class="nav-link" href="#" style="color:white;">Home</a>
+              <a class="nav-link" href="index.php" style="color:white;">Home</a>
             </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#" style="color:white">Info</a>
@@ -33,8 +33,15 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white">Account</a>
                     <ul class="dropdown-menu dropdown-menu-end" style="background-color: #333;">
-                      <li><a class="dropdown-item" style="color: white;" href="login_page.php">Log In</a></li>
-                      <li><a class="dropdown-item" style="color: white;" href="register_page.php">Register</a></li>
+                      <?php 
+                      session_start();
+                      if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                        echo '<li><a class="dropdown-item" style="color: white;" href="../BackEnd/logout.php">Log Out</a></li>';
+                      }else{
+                        echo '<li><a class="dropdown-item" style="color: white;" href="login_page.php">Log In</a></li>';
+                        echo '<li><a class="dropdown-item" style="color: white;" href="register_page.php">Register</a></li>';
+                      }
+                      ?>
                     </ul>
                 </li>
             </ul>
@@ -43,7 +50,7 @@
       </nav>
 
       <div class="form-div">
-        <form action="login.php" method="post">
+        <form action="../BackEnd/login.php" method="post">
           <label for="username" style="color:white">Username:</label>
           <input type="text" id="username" name="username"><br><br>
 
