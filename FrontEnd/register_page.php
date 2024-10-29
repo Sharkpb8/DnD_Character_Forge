@@ -20,21 +20,29 @@
               <a class="nav-link" href="index.php" style="color:white;">Home</a>
             </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#" style="color:white">Info</a>
+                <a class="nav-link disabled" href="#" style="color:white">Info</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#" style="color:white">Character Creator</a>
+                <a class="nav-link disabled" href="#" style="color:white">Character Creator</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#" style="color:white">Group Manager</a>
+                <a class="nav-link disabled" aria-current="page" href="#" style="color:white">Group Manager</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white">Account</a>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white">
+                    <?php
+                    session_start(); 
+                     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                      echo $_SESSION["username"];
+                     }else{
+                      echo 'Account';
+                     }
+                    ?>
+                    </a>
                     <ul class="dropdown-menu dropdown-menu-end" style="background-color: #333;">
                     <?php 
-                      session_start();
                       if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                         echo '<li><a class="dropdown-item" style="color: white;" href="../BackEnd/logout.php">Log Out</a></li>';
                       }else{
