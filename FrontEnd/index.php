@@ -21,44 +21,27 @@
               <a class="nav-link active" href="#" style="color:white;">Home</a>
             </li>
                 <li class="nav-item">
-                <a class="nav-link" href="katalog_page.php" style="color:white">Info</a>
+                <a class="nav-link" href="#" style="color:white">Info</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="borrowed_page.php" style="color:white">Character Creator</a>
+                <a class="nav-link" href="#" style="color:white">Character Creator</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="adding_page.php" style="color:white">Group Manager</a>
+                <a class="nav-link" aria-current="page" href="#" style="color:white">Group Manager</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white">Account</a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                      <li><a class="dropdown-item" href="#">Log In</a></li>
-                      <li><a class="dropdown-item" href="#">Register</a></li>
+                    <ul class="dropdown-menu dropdown-menu-end" style="background-color: #333;">
+                      <li><a class="dropdown-item" style="color: white;" href="login_page.php">Log In</a></li>
+                      <li><a class="dropdown-item" style="color: white;" href="register_page.php">Register</a></li>
                     </ul>
                 </li>
             </ul>
           </div>
         </div>
       </nav>
-      <div class="outer-container" style="color: white;">
-        <div class="inner-container">
-            <h1>Městská knihovna Praha</h1>
-            <p>Otevírací Doba</p>
-            <ul>
-              <li>Po-Pá: 9:00 - 20:00</li>
-              <li>So-Ne: 10:00 - 18:00</li>
-              <li>Svátky: 10:00 - 16:00</li>
-            </ul>
-            <p>Kontaktní údaje</p>
-            <ul>
-              <li>Telefon: +420 123 456 789</li>
-              <li>Email: info@mestskaknihovnapraha.cz</li>
-              <li>Facebook: <a href="https://www.facebook.com/Městská_knihovna_Praha">Městská knihovna Praha</a></li>
-            </ul>
-        </div>
-    </div>
     <footer>
       <p>Made By Adam Hlaváčik</p>
     </footer>
